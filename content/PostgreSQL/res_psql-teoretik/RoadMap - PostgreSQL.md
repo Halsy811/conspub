@@ -27,19 +27,19 @@ title: RoadMap - PostgreSQL
 		- Two-phase commit (2PC) recovery processes (условно)
 		- Parallel worker (условный процесс)
 3. Структура каталогов кластера (etc, PGDATA) + ^back-content-configiration-PGDATA
-	- [[configiration, PGDATA#^conf-cluster-psql|Каталог конфигурация кластера /etc/postgresql]] - Древо файлов и каталогов, их применение и особенности
-	- [[configiration, PGDATA#^pgdata-cluster-cotalog-psql|Каталог данных кластера PGDATA]] - Древо файлов и каталогов
-	- [[configiration, PGDATA#^other-cotalog-psql|Другие каталоги]] - Файлы с PID процессом и др.
-	Файлы конфигурации:
-		[[configiration, PGDATA#^conf-cluster-environment|/etc/psql/.../environment]] - это **переменные окружения**, которые устанавливаются **для процесса `postmaster` и всех его дочерних процессов** (backend’ов, фоновых процессов и т.д.).
-		[[configiration, PGDATA#^conf-cluster-pgctl-conf|/etc/psql/.../pg_ctl.conf]] - альтернатива `systemd`
-		[[configiration, PGDATA#^conf-cluster-pghba-conf|/etc/psql/.../pg_hba.conf]] - Кто, откуда и как может подключиться к каким базам данных в кластере
-		[[configiration, PGDATA#^conf-cluster-pgident-conf|/etc/psql/.../pg_ident.conf]] -  **файл отображения имён пользователей ОС в роли PostgreSQL**, используемый **только при аутентификации методом `ident`** (для TCP-подключений) или **`peer`** (для локальных Unix-сокетов, хотя для `peer` он обычно не нужен).
+		- [[configiration, PGDATA#^conf-cluster-psql|Каталог конфигурация кластера /etc/postgresql]] - Древо файлов и каталогов, их применение и особенности
+		- [[configiration, PGDATA#^pgdata-cluster-cotalog-psql|Каталог данных кластера PGDATA]] - Древо файлов и каталогов
+		- [[configiration, PGDATA#^other-cotalog-psql|Другие каталоги]] - Файлы с PID процессом и др.
+	- Файлы конфигурации:
+		- [[configiration, PGDATA#^conf-cluster-environment|/etc/psql/.../environment]] - это **переменные окружения**, которые устанавливаются **для процесса `postmaster` и всех его дочерних процессов** (backend’ов, фоновых процессов и т.д.).
+		- [[configiration, PGDATA#^conf-cluster-pgctl-conf|/etc/psql/.../pg_ctl.conf]] - альтернатива `systemd`
+		- [[configiration, PGDATA#^conf-cluster-pghba-conf|/etc/psql/.../pg_hba.conf]] - Кто, откуда и как может подключиться к каким базам данных в кластере
+		- [[configiration, PGDATA#^conf-cluster-pgident-conf|/etc/psql/.../pg_ident.conf]] -  **файл отображения имён пользователей ОС в роли PostgreSQL**, используемый **только при аутентификации методом `ident`** (для TCP-подключений) или **`peer`** (для локальных Unix-сокетов, хотя для `peer` он обычно не нужен).
 			- [[configiration, PGDATA#^psql-conf-file-postgresql-conf|/etc/psql/.../postgresql.conf]] - postgresql.conf первичная информация - основной конфигурационный файл
 				- [[postgresql.conf default major-18]] - default конфиг [[configiration, PGDATA#^reboot-conf-psql|Применение изменений]]
 				- [[postgresql.conf|postgresql.conf info]] - Подробное описание настроек
 				- [[configiration, PGDATA#^psql-conf-confd-files|/etc/psql/.../conf.d]] - Доп. файлы конфигурации. Приоритеты файлов конфигурации
-				- [[configiration, PGDATA#^conf-psql-postgresqlauto-ALTER-SYSTEM-command|/var/lib/psql/.../postgresql.auto.conf]] - postgresql.auto.conf - ==✅ Это **рекомендуемый способ** изменения глобальных параметров в production.== Так же меняется через SQL-команду ==ALTER SYSTEM==
+				- [[configiration, PGDATA#^conf-psql-postgresqlauto-ALTER-SYSTEM-command|/var/lib/psql/.../postgresql.auto.conf]] - postgresql.auto.conf - ==Это **рекомендуемый способ** изменения глобальных параметров в production.== Так же меняется через SQL-команду ==ALTER SYSTEM==
 		- [[configiration, PGDATA#^conf-cluster-start-conf|/etc/psql/.../start.conf]] - Файл содержит **ровно одно слово** — режим автозапуска: auto
 4. Принципы и Механизмы
 	- [[Принцип работы - WAL]] +
