@@ -1,8 +1,8 @@
 
 СОДЕРЖАНИЕ
-[[psql - Install|Установка]] +
-АРХИТЕКТУРА PostgreSQL ([[Структурная схема psql.drawio]])
-[[Общая информация]] +
+1. [[psql - Install|Установка]] +
+2. АРХИТЕКТУРА PostgreSQL ([[Структурная схема psql.drawio]])
+	- [[Общая информация]] +
 [[Postmaster process|Postmaster process]] +
 [[Backend processes|Backend processes]] +
 [[Shared memory]] +
@@ -95,7 +95,7 @@ Subprocesses Postmaster:
 
 ---
 
-[[Дополнительная информация psql. Ссылки на ресурсы]]
+[[Дополнительная информация psql - Ссылки на ресурсы]]
 
 ---
 # == Задачки на прокачку
