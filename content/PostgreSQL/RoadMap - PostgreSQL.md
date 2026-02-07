@@ -1,5 +1,7 @@
 #psql
 
+
+
 СОДЕРЖАНИЕ
 /		[[psql - Install|Установка]] +
 /	АРХИТЕКТУРА PostgreSQL ([[Структурная схема psql.drawio]])
